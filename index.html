@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI + Value-Based Pricing | Advanced WebApp</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f8fafc;
+        color: #1e293b;
+    }
+
+    /* HEADER */
+    header {
+        background: linear-gradient(90deg,#ec4899,#8b5cf6,#3b82f6);
+        padding: 35px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* NAVIGATION TABS */
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        background: white;
+        padding: 12px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 3px solid #e2e8f0;
+    }
+    nav a {
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 14px;
+        color: #3b82f6;
+        border-radius: 8px;
+        background: #f1f5f9;
+        transition: 0.3s;
+    }
+    nav a:hover {
+        background: #3b82f6;
+        color: white;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+        max-width: 1100px;
+        margin: 25px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        background: linear-gradient(90deg,#ec4899,#8b5cf6);
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 26px;
+        border-left: 6px solid #8b5cf6;
+        padding-left: 10px;
+    }
+
+    /* WORKFLOW ANIMATION */
+    .workflow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .step {
+        background: white;
+        padding: 14px 20px;
+        border-radius: 10px;
+        border-left: 5px solid #ec4899;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        font-weight: bold;
+    }
+
+    .arrow {
+        font-size: 28px;
+        color: #8b5cf6;
+        animation: pulse 1.6s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+        0%   {opacity: 0.3; transform: translateX(-5px);}
+        50%  {opacity: 1; transform: translateX(5px);}
+        100% {opacity: 0.3; transform: translateX(-5px);}
+    }
+
+    /* CONTENT BOX */
+    .box {
+        background: #f1f5f9;
+        padding: 18px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        margin-top: 6px;
+        border: 1px solid #cbd5e1;
+    }
+
+    .result {
+        background: white;
+        border-left: 5px solid #8b5cf6;
+        padding: 14px;
+        border-radius: 8px;
+        margin-top: 12px;
+        font-weight: bold;
+    }
+
+    /* HEATMAP */
+    .heatmap-box {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+    }
+
+    .heat {
+        padding: 15px;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    footer {
+        background: linear-gradient(90deg,#8b5cf6,#3b82f6);
+        color: white;
+        padding: 22px;
+        margin-top: 40px;
+        text-align: center;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AI + Value-Based Pricing WebApp</h1>
+    <h3>Advanced Tools | HTA Simulations | Regulatory Insights</h3>
+</header>
+
+<nav>
+    <a href="#abstract">Abstract</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#icer">ICER</a>
+    <a href="#uncertainty">AI Uncertainty</a>
+    <a href="#scenario">Scenario</a>
+    <a href="#countries">HTA</a>
+    <a href="#predictor">Regulatory</a>
+    <a href="#pricing">AI Pricing</a>
+    <a href="#heatmap">Heatmap</a>
+    <a href="#equity">Equity</a>
+</nav>
+
+<!-- ABSTRACT -->
+<div class="container" id="abstract">
+    <h2>Abstract</h2>
+    <p>
+The integration of Artificial Intelligence (AI) with value-based pricing (VBP) models is composed to redesign the landscape of healthcare market access and regulatory decision making. 
+As health systems progressively shifting toward value-driven approaches, leveraging AI's analytical power offers new opportunities to optimize pricing strategies based on real-world outcomes 
+and patient-centric system of measurement. The integration supports more accurate and transparent evaluations of value, enabling the development of systems that are both flexible and based on 
+real-world evidence. Furthermore, AI can streamline regulatory pathways by enabling predictive modelling, risk stratification, and data-driven scenario analysis, thereby accelerating time-to-market 
+for innovative therapies. This model shift holds significant potential to align stakeholder—including clients, regulators, providers, and patients—around outcomes-focused care delivery, while also addressing 
+cost-effectiveness and impartiality considerations. Ultimately, the junction of AI and VBP can drive more sustainable healthcare systems and foster access to high-value medical innovations globally.
+    </p>
+</div>
+
+<!-- WORKFLOW -->
+<div class="container" id="workflow">
+    <h2>AI–VBP Workflow Animation</h2>
+    <div class="workflow">
+        <div class="step">Data</div><div class="arrow">➜</div>
+        <div class="step">AI Models</div><div class="arrow">➜</div>
+        <div class="step">Value Assessment</div><div class="arrow">➜</div>
+        <div class="step">VBP Decision</div><div class="arrow">➜</div>
+        <div class="step">HTA Review</div><div class="arrow">➜</div>
+        <div class="step">Regulatory Approval</div><div class="arrow">➜</div>
+        <div class="step">Market Access</div>
+    </div>
+</div>
+
+<!-- ICER -->
+<div class="container" id="icer">
+    <h2>ICER Cost-Effectiveness Calculator</h2>
+    <div class="box">
+        <label>Treatment Cost</label><input id="tc" type="number" value="200000">
+        <label>Comparator Cost</label><input id="cc" type="number" value="120000">
+        <label>QALY Gain</label><input id="qg" type="number" value="0.8">
+        <div class="result" id="icerOut">ICER = –</div>
+    </div>
+</div>
+
+<!-- UNCERTAINTY -->
+<div class="container" id="uncertainty">
+    <h2>AI Uncertainty Reduction</h2>
+    <div class="box">
+        <label>Uncertainty Level (0–100)</label>
+        <input id="un" type="range" min="0" max="100" value="60">
+        <div class="result" id="unOut"></div>
+    </div>
+</div>
+
+<!-- SCENARIO -->
+<div class="container" id="scenario">
+    <h2>Scenario Simulator</h2>
+    <div class="box">
+        <label>Select Scenario</label>
+        <select id="sc">
+            <option>High Uncertainty</option>
+            <option>Low Real-World Evidence</option>
+            <option>High Patient Population</option>
+            <option>Breakthrough Innovation</option>
+        </select>
+        <div class="result" id="scOut"></div>
+    </div>
+</div>
+
+<!-- HTA -->
+<div class="container" id="countries">
+    <h2>HTA Country Comparison</h2>
+    <div class="box">
+        <ul>
+            <li>NICE (UK): £20–£30k/QALY</li>
+            <li>ICER (USA): $100k–$150k/QALY</li>
+            <li>PBAC (Australia): Case-based</li>
+            <li>CADTH (Canada): Contextual factors</li>
+            <li>NMPA (China): Rapid RWE adoption</li>
+        </ul>
+    </div>
+</div>
+
+<!-- REGULATORY -->
+<div class="container" id="predictor">
+    <h2>Regulatory Pathway Predictor</h2>
+    <div class="box">
+        <label>Therapy Type</label>
+        <select id="th">
+            <option>Oncology</option>
+            <option>Rare Disease</option>
+            <option>Digital Therapeutic</option>
+            <option>Cardiology</option>
+        </select>
+        <div class="result" id="thOut"></div>
+    </div>
+</div>
+
+<!-- AI PRICING -->
+<div class="container" id="pricing">
+    <h2>AI Pricing Recommendation</h2>
+    <div class="box">
+        <label>Innovation Score (1–10)</label>
+        <input id="inn" type="number" value="8">
+        <label>Disease Burden (1–10)</label>
+        <input id="bur" type="number" value="7">
+        <label>Population Size</label>
+        <input id="pop" type="number" value="100000">
+        <div class="result" id="priceOut"></div>
+    </div>
+</div>
+
+<!-- HEATMAP -->
+<div class="container" id="heatmap">
+    <h2>Pricing Driver Heatmap</h2>
+    <div class="heatmap-box">
+        <div class="heat" style="background:#ef4444">QALY</div>
+        <div class="heat" style="background:#f97316">Cost Offset</div>
+        <div class="heat" style="background:#eab308">Safety</div>
+        <div class="heat" style="background:#22c55e">RWE</div>
+        <div class="heat" style="background:#3b82f6">Equity</div>
+    </div>
+</div>
+
+<!-- EQUITY -->
+<div class="container" id="equity">
+    <h2>Equity Impact Scorer</h2>
+    <div class="box">
+        <label>Access Gap (%)</label><input id="gap" type="number" value="30">
+        <label>Disease Prevalence (1–10)</label><input id="prev" type="number" value="8">
+        <div class="result" id="eqOut"></div>
+    </div>
+</div>
+
+<footer>
+    © 2025 AI + Value-Based Pricing WebApp | Designed by Esha Vishwakarma  
+</footer>
+
+<script>
+/* ICER */
+function calcICER(){
+    let t=+tc.value, c=+cc.value, q=+qg.value;
+    let icer=(t-c)/q;
+    icerOut.innerHTML="ICER = ₹ "+icer.toFixed(0)+" per QALY";
+}
+tc.oninput=cc.oninput=qg.oninput=calcICER;
+calcICER();
+
+/* Uncertainty */
+un.oninput=()=> {
+    unOut.innerHTML="Uncertainty: "+un.value+"% → AI reduces to "+(un.value*0.4).toFixed(0)+"%";
+};
+un.oninput();
+
+/* Scenario */
+sc.onchange=()=>{
+    let v=sc.value;
+    let msg={
+        "High Uncertainty":"AI reduces uncertainty → better pricing confidence.",
+        "Low Real-World Evidence":"AI models synthetic data → improved evidence.",
+        "High Patient Population":"AI segmentation → optimized pricing.",
+        "Breakthrough Innovation":"AI supports premium pricing rationale."
+    };
+    scOut.innerHTML=msg[v];
+};
+sc.onchange();
+
+/* Regulatory Predictor */
+th.onchange=()=>{
+    let v=th.value;
+    let msg={
+        "Oncology":"High likelihood of accelerated approval.",
+        "Rare Disease":"AI supports limited data models.",
+        "Digital Therapeutic":"AI tracks real-world adherence.",
+        "Cardiology":"AI improves population-level risk analysis."
+    };
+    thOut.innerHTML=msg[v];
+};
+th.onchange();
+
+/* AI Pricing */
+function calcPrice(){
+    let i=+inn.value, b=+bur.value, p=+pop.value;
+    let price=(i*10000 + b*5000)/Math.log(p);
+    priceOut.innerHTML="AI Suggested Price = ₹ "+price.toFixed(0);
+}
+inn.oninput=bur.oninput=pop.oninput=calcPrice;
+calcPrice();
+
+/* Equity Score */
+function calcEq(){
+    let g=+gap.value, pr=+prev.value;
+    eqOut.innerHTML="Equity Impact Score = "+(g*pr).toFixed(0);
+}
+gap.oninput=prev.oninput=calcEq;
+calcEq();
+</script>
+
+</body>
+</html>
